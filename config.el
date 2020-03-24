@@ -40,7 +40,6 @@
       "C-M-w" #'sp-copy-sexp
 
       "M-<delete>" #'sp-unwrap-sexp
-      "M-<backspace>" #'sp-backward-unwrap-sexp
 
       "C-<right>" #'sp-forward-slurp-sexp
       "C-<left>" #'sp-forward-barf-sexp
