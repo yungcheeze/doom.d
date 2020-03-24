@@ -19,47 +19,66 @@
 
 
 (setq org-brain-path "~/Dropbox/Org/brain")
-
 ;; smart parens bindings
-(map! "C-M-f" #'sp-forward-sexp
-      "C-M-b" #'sp-backward-sexp
+(map!
+ ;; unset old bindings
+ (:after smartparens
+   :map smartparens-mode-map
+   "C-M-a" nil
+   "C-M-e" nil
+   "C-M-f" nil
+   "C-M-b" nil
+   "C-M-d" nil
+   "C-M-k" nil
+   "C-M-t" nil
+   "C-<right>" nil
+   "M-<right>" nil
+   "C-<left>" nil
+   "M-<left>" nil)
 
-      "C-M-d" #'sp-down-sexp
-      "C-M-a" #'sp-backward-down-sexp
-      "C-S-d" #'sp-beginning-of-sexp
-      "C-S-a" #'sp-end-of-sexp
+ (:after smartparens
+   :map smartparens-mode-map
+   "C-M-f" #'sp-forward-sexp
+   "C-M-b" #'sp-backward-sexp
 
-      "C-M-e" #'sp-up-sexp
-      "C-M-u" #'sp-backward-up-sexp
-      "C-M-t" #'sp-transpose-sexp
+   "C-M-d" #'sp-down-sexp
+   "C-M-a" #'sp-backward-down-sexp
+   "C-S-d" #'sp-beginning-of-sexp
+   "C-S-a" #'sp-end-of-sexp
 
-      "C-M-n" #'sp-forward-hybrid-sexp
-      "C-M-p" #'sp-backward-hybrid-sexp
+   "C-M-e" #'sp-up-sexp
+   "C-M-u" #'sp-backward-up-sexp
+   "C-M-t" #'sp-transpose-sexp
 
-      "C-M-k" #'sp-kill-sexp
-      "C-M-w" #'sp-copy-sexp
+   "C-M-n" #'sp-forward-hybrid-sexp
+   "C-M-p" #'sp-backward-hybrid-sexp
 
-      "M-<delete>" #'sp-unwrap-sexp
+   "C-M-k" #'sp-kill-sexp
+   "C-M-w" #'sp-copy-sexp
 
-      "C-<right>" #'sp-forward-slurp-sexp
-      "C-<left>" #'sp-forward-barf-sexp
-      "C-M-<left>" #'sp-backward-slurp-sexp
-      "C-M-<right>" #'sp-backward-barf-sexp
+   "M-<delete>" #'sp-unwrap-sexp
 
-      "M-D" #'sp-splice-sexp
-      "C-M-<delete>" #'sp-splice-sexp-killing-forward
-      "C-M-<backspace>" #'sp-splice-sexp-killing-backward
-      "C-S-<backspace>" #'sp-splice-sexp-killing-around
+   "C-<right>" #'sp-forward-slurp-sexp
+   "C-<left>" #'sp-forward-barf-sexp
+   "C-M-<left>" #'sp-backward-slurp-sexp
+   "C-M-<right>" #'sp-backward-barf-sexp
 
-      "C-]" #'sp-select-next-thing-exchange
-      "C-<left_bracket>" #'sp-select-previous-thing
-      "C-M-]" #'sp-select-next-thing
+   "M-D" #'sp-splice-sexp
+   "C-M-<delete>" #'sp-splice-sexp-killing-forward
+   "C-M-<backspace>" #'sp-splice-sexp-killing-backward
+   "C-S-<backspace>" #'sp-splice-sexp-killing-around
 
-      "M-F" #'sp-forward-symbol
-      "M-B" #'sp-backward-symbol
+   "C-]" #'sp-select-next-thing-exchange
+   "C-<left_bracket>" #'sp-select-previous-thing
+   "C-M-]" #'sp-select-next-thing
 
-      "C-\"" #'sp-change-inner
-      "M-i" #'sp-change-enclosing)
+   "M-F" #'sp-forward-symbol
+   "M-B" #'sp-backward-symbol
+
+   "C-\"" #'sp-change-inner
+   "M-i" #'sp-change-enclosing
+   )
+ )
 
 ;; iedit
 (map! "C-;" #'iedit-mode)
