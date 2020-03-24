@@ -2,7 +2,7 @@
 
 ;; Place your private configuration here
 (setq display-line-numbers-type nil)
-
+(setq delete-selection-mode nil)
 
 (map! "M-+" nil
       "M-=" nil
