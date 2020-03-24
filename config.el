@@ -60,3 +60,6 @@
 
       "C-\"" #'sp-change-inner
       "M-i" #'sp-change-enclosing)
+
+;; iedit
+(map! "C-;" #'iedit-mode)
