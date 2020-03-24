@@ -18,3 +18,5 @@
       "M--" #'negative-argument)
 
 
+(setq org-brain-path "~/Dropbox/Org/brain")
+
