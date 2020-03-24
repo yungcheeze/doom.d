@@ -8,3 +8,4 @@
 (package! iedit)
 (package! poetry)
 (package! undo-tree :disable t)
+(package! vmd-mode)
