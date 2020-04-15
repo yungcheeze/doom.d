@@ -125,3 +125,7 @@
         "p" #'personal/reload-pipenv-environment
         "o" #'personal/reload-poetry-environment
         "v" #'personal/reload-pyvenv-environment))
+
+(map! :leader
+      (:prefix-map ("b" . "buffers")
+        "D" #'ace-delete-window))
