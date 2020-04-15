@@ -92,3 +92,36 @@
         "l" #'avy-copy-line
         "r" #'avy-copy-region
         "j" #'avy-goto-char-timer))
+
+
+(defun personal/reload-pipenv-environment ()
+  (interactive)
+  (pyvenv-deactivate)
+  (pipenv-activate)
+  (lsp-restart-workspace)
+  (sleep-for 0 500)
+  (lsp t))
+
+(defun personal/reload-poetry-environment ()
+  (interactive)
+  (pyvenv-deactivate)
+  (poetry-venv-workon)
+  (lsp-restart-workspace)
+  (sleep-for 0 500)
+  (lsp t))
+
+(defun personal/reload-pyvenv-environment ()
+  (interactive)
+  (pyvenv-deactivate)
+  (pyvenv-activate)
+  (lsp-restart-workspace)
+  (sleep-for 0 500)
+  (lsp t))
+
+(map! :after python
+      :map python-mode-map
+      :localleader
+      (:prefix-map ("r" . "reload environment")
+        "p" #'personal/reload-pipenv-environment
+        "o" #'personal/reload-poetry-environment
+        "v" #'personal/reload-pyvenv-environment))
