@@ -9,3 +9,8 @@
 (package! poetry)
 (package! undo-tree :disable t)
 (package! vmd-mode)
+(package! string-inflection)
+(package! inline-crypt)
+(package! swap-regions)
+(package! nov)
+(package! isolate)
