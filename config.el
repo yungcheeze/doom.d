@@ -136,3 +136,5 @@
 (after! groovy-mode
   (setq groovy-indent-offset 2)
   )
+
+(setq ispell-dictionary "en_GB")

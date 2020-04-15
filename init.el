@@ -19,6 +19,8 @@
                          
        :checkers
        syntax
+       grammar
+       spell
 
        :ui
        ;;deft              ; notational velocity for Emacs
