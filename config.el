@@ -18,7 +18,7 @@
       "M--" #'negative-argument)
 
 
-(setq org-brain-path "~/Dropbox/Org/brain")
+(setq org-directory "~/Dropbox/Org")
 ;; smart parens bindings
 (map!
  ;; unset old bindings
