@@ -132,3 +132,7 @@
 
 ;; FIXME template not triggering
 (set-file-template! "\\.restclient$" :trigger "__.restclient" :mode 'restclient-mode)
+
+(after! groovy-mode
+  (setq groovy-indent-offset 2)
+  )
