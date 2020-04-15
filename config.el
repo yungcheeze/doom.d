@@ -82,3 +82,13 @@
 
 ;; iedit
 (map! "C-;" #'iedit-mode)
+
+
+(setq avy-all-windows t
+      avy-all-windows-alt nil)
+
+(map! :leader
+      (:prefix-map ("y" . "avy")
+        "l" #'avy-copy-line
+        "r" #'avy-copy-region
+        "j" #'avy-goto-char-timer))
