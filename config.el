@@ -126,6 +126,20 @@
         "o" #'personal/reload-poetry-environment
         "v" #'personal/reload-pyvenv-environment))
 
+(defcustom python-pytest-root nil
+  "The name of the project root executable."
+  :group 'python-pytest
+  :type 'string)
+
+;; override python-pytest--project-root to return python-pytest-root if set
+(eval-after-load "python-pytest"
+  '(defun python-pytest--project-root ()
+     "Find the project root directory."
+     (if python-pytest-root
+         (symbol-value 'python-pytest-root)
+       (projectile-project-root)))
+  )
+
 (map! :leader
       (:prefix-map ("b" . "buffers")
         "D" #'ace-delete-window))
