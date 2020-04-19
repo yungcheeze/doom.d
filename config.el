@@ -150,7 +150,7 @@
         "D" #'ace-delete-window))
 
 
-(map! "C-#" #'ace-window)
+(map! "C-0" #'ace-window)
 
 ;; FIXME template not triggering
 (set-file-template! "\\.restclient$" :trigger "__.restclient" :mode 'restclient-mode)
