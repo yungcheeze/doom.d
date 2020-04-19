@@ -122,8 +122,9 @@
       :map python-mode-map
       :localleader
       (:prefix-map ("r" . "reload environment")
-        "p" #'personal/reload-pipenv-environment
-        "o" #'personal/reload-poetry-environment
+        (:prefix-map("p" . "...")
+          "i" #'personal/reload-pipenv-environment
+          "o" #'personal/reload-poetry-environment)
         "v" #'personal/reload-pyvenv-environment))
 
 (defcustom python-pytest-root nil
