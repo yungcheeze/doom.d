@@ -67,7 +67,7 @@
        (cc +lsp)
        data
        emacs-lisp
-       (haskell +dante)
+       (haskell +lsp)
        (java +lsp)
        latex
        markdown
