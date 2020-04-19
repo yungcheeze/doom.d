@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: print-variable
+# key: prv
+# --
+print("$1 =", ${1:variable})
