@@ -160,3 +160,10 @@
   )
 
 (setq ispell-dictionary "en_GB")
+
+(setq-default ebal-operation-mode 'stack)
+
+(map! :after haskell-mode
+      :map haskell-mode-map
+      :localleader
+      "e" #'ebal-execute)

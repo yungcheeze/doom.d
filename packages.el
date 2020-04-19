@@ -14,3 +14,4 @@
 (package! swap-regions)
 (package! nov)
 (package! isolate)
+(package! ebal)
