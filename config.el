@@ -141,6 +141,10 @@
        (projectile-project-root)))
   )
 
+(after! python-pytest
+  (setq-default python-pytest-executable "python -m pytest"
+                python-pytest-arguments '("-x" "-s" "-vv")))
+
 (map! :leader
       (:prefix-map ("b" . "buffers")
         "D" #'ace-delete-window))
