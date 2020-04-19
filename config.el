@@ -171,3 +171,13 @@
         "s" #'hasky-stack-execute
         "a" #'hasky-stack-package-action
         "i" #'hasky-stack-new))
+
+
+(defun personal/string-at-point ()
+  "Kill the quoted string or the list that includes the point"
+  (interactive)
+  (let ((p (nth 8 (syntax-ppss))))
+    (when (eq (char-after p) ?\")
+      (progn
+        (goto-char p)
+        (thing-at-point 'sexp)))))
