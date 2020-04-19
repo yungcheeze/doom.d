@@ -15,3 +15,4 @@
 (package! nov)
 (package! isolate)
 (package! ebal)
+(package! hasky-stack)

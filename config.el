@@ -166,4 +166,8 @@
 (map! :after haskell-mode
       :map haskell-mode-map
       :localleader
-      "e" #'ebal-execute)
+      "e" #'ebal-execute
+      (:prefix-map ("s" . "hasky-stack")
+        "s" #'hasky-stack-execute
+        "a" #'hasky-stack-package-action
+        "i" #'hasky-stack-new))
