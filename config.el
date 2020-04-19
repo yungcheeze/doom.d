@@ -172,7 +172,8 @@
         "a" #'hasky-stack-package-action
         "i" #'hasky-stack-new
         (:prefix-map ("t" . "test")
-          "t" #'personal/hasky-stack-test-thing-at-point)))
+          "t" #'personal/hasky-stack-test-thing-at-point
+          "a" #'personal/hasky-stack-test-all)))
 
 
 (defun personal/string-at-point ()
@@ -201,6 +202,20 @@
            "test"
            target
            (list (format "--test-arguments=-m %s" test-filter)))
-        (message "failed to extract test filter")))))
+        (message "failed to extract test filter"))))
+
+  (defun personal/hasky-stack-test-all (target)
+    (interactive
+     (progn
+       (hasky-stack--prepare)
+       (list (hasky-stack--select-target "Test target: " ":test:"))))
+    (apply
+     #'hasky-stack--exec-command
+     hasky-stack--project-name
+     hasky-stack--last-directory
+     "test"
+     target
+     (list))))
 
 (autoload 'personal/hasky-stack-test-thing-at-point "hasky-stack" "" t)
+(autoload 'personal/hasky-stack-test-all "hasky-stack" "" t)
