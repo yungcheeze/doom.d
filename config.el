@@ -93,30 +93,30 @@
         "r" #'avy-copy-region
         "j" #'avy-goto-char-timer))
 
+(defun personal/lsp-restart-workspace ()
+  (interactive)
+  (lsp-restart-workspace)
+  (sleep-for 0 500)
+  (lsp t))
+
 
 (defun personal/reload-pipenv-environment ()
   (interactive)
   (pyvenv-deactivate)
   (pipenv-activate)
-  (lsp-restart-workspace)
-  (sleep-for 0 500)
-  (lsp t))
+  (personal/lsp-restart-workspace))
 
 (defun personal/reload-poetry-environment ()
   (interactive)
   (pyvenv-deactivate)
   (poetry-venv-workon)
-  (lsp-restart-workspace)
-  (sleep-for 0 500)
-  (lsp t))
+  (personal/lsp-restart-workspace))
 
 (defun personal/reload-pyvenv-environment ()
   (interactive)
   (pyvenv-deactivate)
   (pyvenv-activate)
-  (lsp-restart-workspace)
-  (sleep-for 0 500)
-  (lsp t))
+  (personal/lsp-restart-workspace))
 
 (map! :after python
       :map python-mode-map
@@ -167,6 +167,7 @@
       :map haskell-mode-map
       :localleader
       "e" #'ebal-execute
+      "r" #'personal/lsp-restart-workspace
       (:prefix-map ("s" . "hasky-stack")
         "s" #'hasky-stack-execute
         "a" #'hasky-stack-package-action
