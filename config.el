@@ -220,3 +220,16 @@
 
 (autoload 'personal/hasky-stack-test-thing-at-point "hasky-stack" "" t)
 (autoload 'personal/hasky-stack-test-all "hasky-stack" "" t)
+
+(defhydra personal/hydra-fold nil
+  "fold"
+  ("C" +fold/close-all "close-all")
+  ("n" +fold/next "next")
+  ("o" +fold/open "open")
+  ("c" +fold/close "close")
+  ("SPC" +fold/toggle "toggle")
+  ("O" +fold/open-all "open-all")
+  ("p" +fold/previous "previous"))
+
+(map! :leader
+      (:desc "fold" "z" #'personal/hydra-fold/body))
