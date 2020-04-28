@@ -147,10 +147,13 @@
 
 (map! :leader
       (:prefix-map ("b" . "buffers")
-        "D" #'ace-delete-window))
+        "d" #'ace-delete-window
+        "r" #'revert-buffer))
+(map! :leader
+      "w ;" #'+hydra/window-nav/body)
 
-
-(map! "C-0" #'ace-window)
+(map! :leader
+      "TAB" #'ace-window)
 
 ;; FIXME template not triggering
 (set-file-template! "\\.restclient$" :trigger "__.restclient" :mode 'restclient-mode)
