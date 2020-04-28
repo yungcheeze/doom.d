@@ -162,6 +162,19 @@
 (map! "C-x C-o" #'ace-window
       "C-x w" #'+hydra/window-nav/body)
 
+(map! (:desc "next-buffer" "C-x <C-right>" #'personal/hydra-buffer-nav/next-buffer)
+      (:desc "next-buffer" "C-x <right>" #'personal/hydra-buffer-nav/next-buffer)
+      (:desc "previous-buffer" "C-x <C-left>" #'personal/hydra-buffer-nav/previous-buffer)
+      (:desc "previous-buffer" "C-x <left>" #'personal/hydra-buffer-nav/previous-buffer))
+
+(defhydra personal/hydra-buffer-nav nil
+  "buffers"
+  ("<right>" next-buffer "next")
+  ("<C-right>" next-buffer "next")
+  ("<left>" previous-buffer "previous")
+  ("<C-left>" previous-buffer "previous")
+  ("k" doom/kill-this-buffer-in-all-windows "kill"))
+
 
 (after! groovy-mode
   (setq groovy-indent-offset 2)
