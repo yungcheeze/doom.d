@@ -157,10 +157,10 @@
         "d" #'ace-delete-window
         "r" #'revert-buffer))
 (map! :leader
+      "TAB" #'ace-window
       "w ;" #'+hydra/window-nav/body)
-
-(map! :leader
-      "TAB" #'ace-window)
+(map! "C-x C-o" #'ace-window
+      "C-x w" #'+hydra/window-nav/body)
 
 
 (after! groovy-mode
