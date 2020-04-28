@@ -233,3 +233,6 @@
 
 (map! :leader
       (:desc "fold" "z" #'personal/hydra-fold/body))
+
+(add-to-list 'auto-mode-alist '("\\`Pipfile\\'" . conf-toml-mode))
+(add-to-list 'auto-mode-alist '("\\.restclient\\'" . restclient-mode))
