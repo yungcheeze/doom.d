@@ -82,6 +82,7 @@
 
 ;; iedit
 (map! "C-;" #'iedit-mode)
+(map! :leader "i e" #'iedit-mode)
 
 
 (setq avy-all-windows t
