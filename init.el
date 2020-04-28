@@ -62,6 +62,7 @@
        magit
        make
        pdf
+       (debugger +lsp)
 
        :lang
        (cc +lsp)
