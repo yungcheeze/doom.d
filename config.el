@@ -162,8 +162,6 @@
 (map! :leader
       "TAB" #'ace-window)
 
-;; FIXME template not triggering
-(set-file-template! "\\.restclient$" :trigger "__.restclient" :mode 'restclient-mode)
 
 (after! groovy-mode
   (setq groovy-indent-offset 2)
@@ -246,3 +244,4 @@
 
 (add-to-list 'auto-mode-alist '("\\`Pipfile\\'" . conf-toml-mode))
 (add-to-list 'auto-mode-alist '("\\.restclient\\'" . restclient-mode))
+(set-file-template! "\\.restclient$" :trigger "__.restclient" :mode 'restclient-mode)
