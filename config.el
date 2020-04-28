@@ -94,6 +94,12 @@
         "r" #'avy-copy-region
         "j" #'avy-goto-char-timer))
 
+(map! :after lsp
+      :map lsp-mode-map
+      :leader
+      (:prefix-map ("," . "lsp")
+        "r" #'personal/lsp-restart-workspace))
+
 (defun personal/lsp-restart-workspace ()
   (interactive)
   (lsp-restart-workspace)
