@@ -6,7 +6,11 @@
 
 (map! "M-+" nil
       "M-=" nil
-      "M--" nil
+      "M--" nil)
+
+;; unbind C-; (used for iedit-mode)
+(map! "C-;" nil)
+(map! :map flyspell-mode-map
       "C-;" nil)
 
 (map! :leader
