@@ -179,6 +179,9 @@
   ("<C-left>" previous-buffer "previous")
   ("k" doom/kill-this-buffer-in-all-windows "kill"))
 
+(map! "C-x t" #'treemacs)
+(map! :leader
+      "t t" #'treemacs)
 
 (after! groovy-mode
   (setq groovy-indent-offset 2)
