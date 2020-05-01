@@ -16,3 +16,4 @@
 (package! isolate)
 (package! ebal)
 (package! hasky-stack)
+(package! hlint-refactor)
