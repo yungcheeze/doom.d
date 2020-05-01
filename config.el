@@ -84,6 +84,8 @@
    )
  )
 
+(map! :leader
+      "g p" #'xref-pop-marker-stack)
 ;; iedit
 (map! "C-;" #'iedit-mode)
 (map! :leader "i e" #'iedit-mode)
