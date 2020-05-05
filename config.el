@@ -166,7 +166,17 @@
       "TAB" #'ace-window
       "w ;" #'+hydra/window-nav/body)
 (map! "C-x C-o" #'ace-window
-      "C-x w" #'+hydra/window-nav/body)
+      "C-x w" #'+hydra/window-nav/body
+      "C-x C-3" #'personal/split-and-switch-window-right
+      "C-x C-2" #'personal/split-and-switch-window-below)
+
+(defun personal/split-and-switch-window-right ()
+    (interactive)
+    (select-window (split-window-right)))
+
+(defun personal/split-and-switch-window-below ()
+    (interactive)
+  (select-window (split-window-below)))
 
 (map! (:desc "next-buffer" "C-x <C-right>" #'personal/hydra-buffer-nav/next-buffer)
       (:desc "next-buffer" "C-x <right>" #'personal/hydra-buffer-nav/next-buffer)
