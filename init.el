@@ -72,6 +72,7 @@
        (java +lsp)
        latex
        markdown
+       yaml
        nix
        (org
         +brain
