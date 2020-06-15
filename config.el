@@ -27,61 +27,61 @@
 (map!
  ;; unset old bindings
  (:after smartparens
-   :map smartparens-mode-map
-   "C-M-a" nil
-   "C-M-e" nil
-   "C-M-f" nil
-   "C-M-b" nil
-   "C-M-d" nil
-   "C-M-k" nil
-   "C-M-t" nil
-   "C-<right>" nil
-   "M-<right>" nil
-   "C-<left>" nil
-   "M-<left>" nil)
+  :map smartparens-mode-map
+  "C-M-a" nil
+  "C-M-e" nil
+  "C-M-f" nil
+  "C-M-b" nil
+  "C-M-d" nil
+  "C-M-k" nil
+  "C-M-t" nil
+  "C-<right>" nil
+  "M-<right>" nil
+  "C-<left>" nil
+  "M-<left>" nil)
 
  (:after smartparens
-   :map smartparens-mode-map
-   "C-M-f" #'sp-forward-sexp
-   "C-M-b" #'sp-backward-sexp
+  :map smartparens-mode-map
+  "C-M-f" #'sp-forward-sexp
+  "C-M-b" #'sp-backward-sexp
 
-   "C-M-d" #'sp-down-sexp
-   "C-M-a" #'sp-backward-down-sexp
-   "C-S-d" #'sp-beginning-of-sexp
-   "C-S-a" #'sp-end-of-sexp
+  "C-M-d" #'sp-down-sexp
+  "C-M-a" #'sp-backward-down-sexp
+  "C-S-d" #'sp-beginning-of-sexp
+  "C-S-a" #'sp-end-of-sexp
 
-   "C-M-e" #'sp-up-sexp
-   "C-M-u" #'sp-backward-up-sexp
-   "C-M-t" #'sp-transpose-sexp
+  "C-M-e" #'sp-up-sexp
+  "C-M-u" #'sp-backward-up-sexp
+  "C-M-t" #'sp-transpose-sexp
 
-   "C-M-n" #'sp-forward-hybrid-sexp
-   "C-M-p" #'sp-backward-hybrid-sexp
+  "C-M-n" #'sp-forward-hybrid-sexp
+  "C-M-p" #'sp-backward-hybrid-sexp
 
-   "C-M-k" #'sp-kill-sexp
-   "C-M-w" #'sp-copy-sexp
+  "C-M-k" #'sp-kill-sexp
+  "C-M-w" #'sp-copy-sexp
 
-   "M-<delete>" #'sp-unwrap-sexp
+  "M-<delete>" #'sp-unwrap-sexp
 
-   "C-<right>" #'sp-forward-slurp-sexp
-   "C-<left>" #'sp-forward-barf-sexp
-   "C-M-<left>" #'sp-backward-slurp-sexp
-   "C-M-<right>" #'sp-backward-barf-sexp
+  "C-<right>" #'sp-forward-slurp-sexp
+  "C-<left>" #'sp-forward-barf-sexp
+  "C-M-<left>" #'sp-backward-slurp-sexp
+  "C-M-<right>" #'sp-backward-barf-sexp
 
-   "M-D" #'sp-splice-sexp
-   "C-M-<delete>" #'sp-splice-sexp-killing-forward
-   "C-M-<backspace>" #'sp-splice-sexp-killing-backward
-   "C-S-<backspace>" #'sp-splice-sexp-killing-around
+  "M-D" #'sp-splice-sexp
+  "C-M-<delete>" #'sp-splice-sexp-killing-forward
+  "C-M-<backspace>" #'sp-splice-sexp-killing-backward
+  "C-S-<backspace>" #'sp-splice-sexp-killing-around
 
-   "C-]" #'sp-select-next-thing-exchange
-   "C-<left_bracket>" #'sp-select-previous-thing
-   "C-M-]" #'sp-select-next-thing
+  "C-]" #'sp-select-next-thing-exchange
+  "C-<left_bracket>" #'sp-select-previous-thing
+  "C-M-]" #'sp-select-next-thing
 
-   "M-F" #'sp-forward-symbol
-   "M-B" #'sp-backward-symbol
+  "M-F" #'sp-forward-symbol
+  "M-B" #'sp-backward-symbol
 
-   "C-\"" #'sp-change-inner
-   "M-i" #'sp-change-enclosing
-   )
+  "C-\"" #'sp-change-inner
+  "M-i" #'sp-change-enclosing
+  )
  )
 
 (map! :leader
@@ -96,15 +96,15 @@
 
 (map! :leader
       (:prefix-map ("y" . "avy")
-        "l" #'avy-copy-line
-        "r" #'avy-copy-region
-        "j" #'avy-goto-char-timer))
+       "l" #'avy-copy-line
+       "r" #'avy-copy-region
+       "j" #'avy-goto-char-timer))
 
 (map! :after lsp
       :map lsp-mode-map
       :leader
       (:prefix-map ("," . "lsp")
-        "r" #'personal/lsp-restart-workspace))
+       "r" #'personal/lsp-restart-workspace))
 
 (defun personal/lsp-restart-workspace ()
   (interactive)
@@ -135,10 +135,10 @@
       :map python-mode-map
       :localleader
       (:prefix-map ("r" . "reload environment")
-        (:prefix-map("p" . "...")
-          "i" #'personal/reload-pipenv-environment
-          "o" #'personal/reload-poetry-environment)
-        "v" #'personal/reload-pyvenv-environment))
+       (:prefix-map("p" . "...")
+        "i" #'personal/reload-pipenv-environment
+        "o" #'personal/reload-poetry-environment
+        "v" #'personal/reload-pyvenv-environment)))
 
 (defcustom python-pytest-root nil
   "The name of the project root executable."
@@ -156,12 +156,12 @@
 
 (after! python-pytest
   (setq-default python-pytest-executable "python -m pytest"
-                python-pytest-arguments '("-x" "-s" "-vv")))
+                python-pytest-arguments (list "-x" "-s" "-vv")))
 
 (map! :leader
       (:prefix-map ("b" . "buffers")
-        "d" #'ace-delete-window
-        "r" #'revert-buffer))
+       "d" #'ace-delete-window
+       "r" #'revert-buffer))
 (map! :leader
       "TAB" #'ace-window
       "w ;" #'+hydra/window-nav/body)
@@ -171,11 +171,11 @@
       "C-x C-2" #'personal/split-and-switch-window-below)
 
 (defun personal/split-and-switch-window-right ()
-    (interactive)
-    (select-window (split-window-right)))
+  (interactive)
+  (select-window (split-window-right)))
 
 (defun personal/split-and-switch-window-below ()
-    (interactive)
+  (interactive)
   (select-window (split-window-below)))
 
 (map! (:desc "next-buffer" "C-x <C-right>" #'personal/hydra-buffer-nav/next-buffer)
@@ -209,12 +209,12 @@
       "e" #'ebal-execute
       "r" #'personal/lsp-restart-workspace
       (:prefix-map ("s" . "hasky-stack")
-        "s" #'hasky-stack-execute
-        "a" #'hasky-stack-package-action
-        "i" #'hasky-stack-new
-        (:prefix-map ("t" . "test")
-          "t" #'personal/hasky-stack-test-thing-at-point
-          "a" #'personal/hasky-stack-test-all)))
+       "s" #'hasky-stack-execute
+       "a" #'hasky-stack-package-action
+       "i" #'hasky-stack-new
+       (:prefix-map ("t" . "test")
+        "t" #'personal/hasky-stack-test-thing-at-point
+        "a" #'personal/hasky-stack-test-all)))
 
 
 (defun personal/string-at-point ()
@@ -274,6 +274,21 @@
 (map! :leader
       (:desc "fold" "z" #'personal/hydra-fold/body))
 
-(add-to-list 'auto-mode-alist '("\\`Pipfile\\'" . conf-toml-mode))
+(add-to-list 'auto-mode-alist '("/Pipfile\\'" . conf-toml-mode))
+(add-to-list 'auto-mode-alist '("/poetry.lock\\'" . conf-toml-mode))
 (add-to-list 'auto-mode-alist '("\\.restclient\\'" . restclient-mode))
 (set-file-template! "\\.restclient$" :trigger "__.restclient" :mode 'restclient-mode)
+
+;; (add-to-list 'projectile-globally-ignored-directories ".mypy_cache")
+;; Macros
+(fset 'clean-verse
+      "\C-a\C-k\336\C-a\C-k\336\336\373\C-p \C-y")
+
+;; Setup: 2 windows, left window has org-brain heading, right window is on heading you'd like to add friend to
+(defun org-brain-insert-verse-and-link-as-friend()
+  (interactive)
+  (clean-verse)
+  (org-brain-ensure-ids-in-buffer)
+  (save-buffer)
+  (other-window)
+  (org-brain-add-friendship))
