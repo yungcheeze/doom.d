@@ -61,15 +61,16 @@
        (lsp +peek)
        magit
        make
-       pdf
        (debugger +lsp)
 
        :lang
        (cc +lsp)
+       (csharp +lsp)
        data
        emacs-lisp
        (haskell +dante)
        (java +lsp)
+       javascript
        latex
        markdown
        yaml
