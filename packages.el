@@ -17,3 +17,5 @@
 (package! ebal)
 (package! hasky-stack)
 (package! hlint-refactor)
+(package! yapfify)
+(package! vimrc-mode)
